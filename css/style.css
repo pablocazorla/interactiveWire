@@ -1,0 +1,33 @@
+@charset "UTF-8";
+body{background-color: #DDD;color:#333;font: 14px/1.3em sans-serif;}
+h1{font-size: 24px;line-height: 1.4em;margin-bottom: 15px}
+
+#viewer{
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left:0;
+	background-color:#FFF;
+	width: 100%;height: 100%;
+	border:solid 1px #BBB;
+	overflow: auto;
+}
+
+#viewer.liquid img{
+	width: auto !important;
+	max-width: 100% !important;
+	height: auto !important;
+	display: block;
+	margin: 0 auto;
+}
+
+#viewer .image-container{
+	position: relative;
+}
+#viewer .image-container a{
+	position: absolute;
+	display: block;
+	background-color: #def;
+	opacity: .4;
+	border: solid 1px #def;
+}
