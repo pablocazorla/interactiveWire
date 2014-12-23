@@ -1,6 +1,45 @@
 @charset "UTF-8";
-body{background-color: #DDD;color:#333;font: 14px/1.3em sans-serif;}
-h1{font-size: 24px;line-height: 1.4em;margin-bottom: 15px}
+/* RESET ****************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ * v2.0 | 20110126 * License: none (public domain) */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul,menu{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after{content:"";display:table}
+.clearfix:after,.row:after{clear:both}
+.clearfix,.row{zoom:1}
+
+*,*:before,*:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+
+body,input,textarea{background-color: #DDD;color:#333;}
+
+body,input,textarea{
+	font: 14px/1.3em 'Roboto', sans-serif;
+}
+
+
+
+
+
+h1{font-size: 42px}
+h2{font-size: 32px}
+h3{font-size: 24px}
+h4{font-size: 18px}
+h5{font-size: 16px}
+h6{font-size: 14px}
+
+h1,h2,h3,h4,h5,h6,.title{
+	font-family: 'Roboto Slab', serif;
+	line-height: 1.4em;padding-top: 15px;margin-bottom: 15px;
+}
+
+h1{margin-bottom: 20px;}
+
+p{
+	margin-bottom: 15px;
+}
 
 #viewer{
 	position: fixed;
@@ -31,3 +70,138 @@ h1{font-size: 24px;line-height: 1.4em;margin-bottom: 15px}
 	opacity: .4;
 	border: solid 1px #def;
 }
+
+/* LAYOUT ****************************************/
+.wrap{
+	max-width: 1260px;
+	padding-left: 30px;padding-right: 30px;
+	margin-left: auto;margin-right: auto;
+}
+.row{
+	margin-left: -15px;margin-right: -15px;min-height: 1px;
+}
+.col{
+	float: left;
+	padding-left: 15px;padding-right: 15px;
+	min-height: 1px;
+}
+.col-3{
+	width:25%;
+}
+.col-12{
+	width:100%;
+}
+
+
+/* COMMON ****************************************/
+.box{
+	background-color: #FFF;border-radius: 3px;
+	border:solid 1px #CCC;box-shadow: 0 2px 3px rgba(0,0,0,.1);
+	padding: 10px;
+}
+.btn{
+	display: inline-block;
+	font-size: 16px;
+	line-height: 32px;
+	padding: 0 15px;
+	background-color: #00AD18;
+	border-radius: 3px;
+	min-width: 120px;
+	text-align: center;
+	color: #FFF;
+	text-decoration: none;
+	border:solid 1px rgba(0,0,0,.05);
+	box-shadow: inset 0 16px 12px rgba(255,255,255,.3);
+	-webkit-transition: box-shadow .1s;
+	-moz-transition: box-shadow .1s;
+	transition: box-shadow .1s;
+}
+.btn:hover{
+	box-shadow: inset 0 26px 12px rgba(255,255,255,.45);
+}
+.btn.small{
+	font-size: 12px;
+	line-height: 24px;
+	padding: 0 10px;
+	min-width: 90px;
+}
+.btn.orange{
+	background-color: #D80;
+}
+.btn.red{
+	background-color: #D10;
+}
+
+.empty-title{
+	text-align: center;
+	color:#999;
+	margin-bottom:30px;
+}
+
+/* PROJECT LIST ****************************************/
+.project-list{
+	min-height: 400px;
+}
+.project-card{
+	height:350px;
+	margin-bottom:30px;
+}
+
+.project-card figure{
+	overflow: hidden;
+	height: 200px;
+	background-color: #DDD;
+	border: solid 1px #CCC;
+	position: relative
+}
+.project-card figure img{
+	width: 100% !important;
+	height: auto !important;
+	display: block;
+}
+.project-card figure .actions{
+	position: absolute;
+	top: 0;bottom: 0;left: 0;right: 0;
+	background-color: rgba(0,0,0,.5);
+	padding-top: 45px;
+	opacity: 0;
+	-webkit-transition: opacity .2s;
+	-moz-transition: opacity .2s;
+	transition: opacity .2s;
+}
+.project-card:hover .actions{
+	opacity: 1;	
+}
+.project-card figure .actions .btn{
+	display: block;
+	margin:0 auto 10px;
+	max-width: 120px;
+}
+.project-card figure .actions .btn.small{
+	max-width: 90px;
+}
+
+
+
+/***********************************/
+
+.main-article-header{
+	border-bottom: solid 1px #AAA;
+	margin-bottom: 25px;
+height:80px;
+}
+.main-article-header h1{
+	margin: 0;padding: 0;
+	line-height:80px;
+	float:left;
+	width:70%;
+}
+.main-article-header .actions{
+	height:80px;
+	padding: 24px 0;
+	float: right;
+	text-align: right;
+}
+
+
+
